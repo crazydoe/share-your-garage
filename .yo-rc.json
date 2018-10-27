@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "ShareYourGarage",
+    "packageName": "com.michal.garageshare",
+    "packageFolder": "com/michal/garageshare",
+    "serverPort": 8080,
+    "serviceDiscoveryType": false,
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "no",
+    "enableHibernateCache": false,
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "enableTranslation": false,
+    "nativeLanguage": "en",
+    "languages": [
+      "en"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "5.5.0",
+    "jwtSecretKey": "YWE5ZGQ3YTVhYmUxYWY1YmNkNjkxZmM0ZTU4YTEwOTQ3ZjNjNmNmOTUxNjkxZWEyMTc0YWJjNDJkOGI0NThmYjg0Y2VlODUwZDMzMmFhODlmN2E5ZmNiY2I5NTkxNDVjNTBlZjQyMjM5N2IwZmU0MWVmNjIxYmY3ZWVhZjg2ZjE="
+  },
+  "git-provider": "GitHub",
+  "git-company": "crazydoe",
+  "repository-name": "share-your-garage"
+}
