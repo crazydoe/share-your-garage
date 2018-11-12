@@ -1,6 +1,6 @@
 package com.michal.garageshare.config;
 
-import com.michal.garageshare.aop.logging.LoggingAspect;
+import com.michal.garageshare.logging.aop.LoggingAspect;
 
 import io.github.jhipster.config.JHipsterConstants;
 

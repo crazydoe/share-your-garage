@@ -1,6 +1,6 @@
 package com.michal.garageshare.config;
 
-import com.michal.garageshare.security.*;
+import com.michal.garageshare.security.authority.AuthoritiesConstants;
 import com.michal.garageshare.security.jwt.*;
 
 import org.springframework.beans.factory.BeanInitializationException;
@@ -106,11 +106,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/api/account/reset-password/init").permitAll()
             .antMatchers("/api/account/reset-password/finish").permitAll()
             .antMatchers("/api/**").authenticated()
-            .antMatchers("/websocket/tracker").hasAuthority(AuthoritiesConstants.ADMIN)
+            .antMatchers("/websocket/tracker").hasAuthority(AuthoritiesConstants.USER)
             .antMatchers("/websocket/**").permitAll()
             .antMatchers("/management/health").permitAll()
             .antMatchers("/management/info").permitAll()
-            .antMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN)
+            .antMatchers("/management/**").hasAuthority(AuthoritiesConstants.USER)
         .and()
             .apply(securityConfigurerAdapter());
 

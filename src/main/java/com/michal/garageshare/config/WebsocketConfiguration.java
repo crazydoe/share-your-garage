@@ -1,6 +1,6 @@
 package com.michal.garageshare.config;
 
-import com.michal.garageshare.security.AuthoritiesConstants;
+import com.michal.garageshare.security.authority.AuthoritiesConstants;
 
 import java.security.Principal;
 import java.util.*;

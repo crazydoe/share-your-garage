@@ -35,9 +35,9 @@ spring:
         serialization.indent_output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:mysql://localhost:3306/ShareYourGarage?useUnicode=true&characterEncoding=utf8&useSSL=false
-        username: root
-        password:
+        url: jdbc:mysql://localhost:3306/shareyourgarage?useUnicode=true&characterEncoding=utf8&useSSL=false
+        username: sharegarage
+        password: sharegarage
         hikari:
             auto-commit: false
             data-source-properties:
@@ -69,12 +69,6 @@ spring:
 
 server:
     port: 8080
-
-# ===================================================================
-# JHipster specific properties
-#
-# Full reference is available at: https://www.jhipster.tech/common-application-properties/
-# ===================================================================
 
 jhipster:
     http:
@@ -112,14 +106,3 @@ jhipster:
             host: localhost
             port: 5000
             queue-size: 512
-
-# ===================================================================
-# Application specific properties
-# Add your own application properties here, see the ApplicationProperties class
-# to have type-safe configuration, like in the JHipsterProperties above
-#
-# More documentation is available at:
-# https://www.jhipster.tech/common-application-properties/
-# ===================================================================
-
-# application:
