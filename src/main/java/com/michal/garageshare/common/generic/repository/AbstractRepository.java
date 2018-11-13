@@ -11,6 +11,6 @@ import com.michal.garageshare.common.generic.domain.EntityInterface;
 @NoRepositoryBean
 public interface AbstractRepository<ENTITY extends EntityInterface, ID extends Serializable> extends JpaRepository<ENTITY, ID> {
 
-    List<ENTITY> save(List<ENTITY> entities);
+//    List<ENTITY> save(List<ENTITY> entities);
 
 }

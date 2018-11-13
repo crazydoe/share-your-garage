@@ -23,9 +23,6 @@ import java.util.stream.Stream;
 
 import static com.michal.garageshare.security.authority.AuthoritiesConstants.USER;
 
-/**
- * Authenticate a user from the database.
- */
 @Slf4j
 @RequiredArgsConstructor
 @Component("userDetailsService")
@@ -39,12 +36,12 @@ public class DomainUserDetailsService implements UserDetailsService {
 		log.debug("Authenticating {}", login);
 
 		if (new EmailValidator().isValid(login, null)) {
-			return userRepository.findOneWithAuthoritiesByEmail(login).map(user -> createSpringSecurityUser(login, user))
+			return userRepository.findOneByEmail(login).map(user -> createSpringSecurityUser(login, user))
 								 .orElseThrow(() -> new UsernameNotFoundException("UserEntity with email " + login + " was not found in the database"));
 		}
 
 		String lowercaseLogin = login.toLowerCase(Locale.ENGLISH);
-		return userRepository.findOneWithAuthoritiesByLogin(lowercaseLogin).map(user -> createSpringSecurityUser(lowercaseLogin, user))
+		return userRepository.findOneByLogin(lowercaseLogin).map(user -> createSpringSecurityUser(lowercaseLogin, user))
 							 .orElseThrow(() -> new UsernameNotFoundException("UserEntity " + lowercaseLogin + " was not found in the database"));
 
 	}

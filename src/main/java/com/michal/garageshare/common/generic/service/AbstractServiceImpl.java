@@ -29,7 +29,7 @@ public abstract class AbstractServiceImpl< ENTITY extends EntityInterface, DTO e
     @Transactional
     public List<DTO> create(List<DTO> dtos) {
         List<ENTITY> entities = mapper.toEntities(dtos);
-        List<ENTITY> saved = repository.save(entities);
+        List<ENTITY> saved = repository.saveAll(entities);
         return mapper.toDtos(saved);
     }
 

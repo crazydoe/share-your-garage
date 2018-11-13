@@ -13,8 +13,6 @@ import com.michal.garageshare.user.dto.UserDTO;
 import com.michal.garageshare.user.mapper.UserMapper;
 import com.michal.garageshare.user.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -169,27 +167,6 @@ public class UserServiceImpl extends AbstractServiceImpl<UserEntity, UserDTO, Lo
                 log.debug("Changed password for UserEntity: {}", user);
             });
     }
-
-//    @Transactional(readOnly = true)
-//    public Page<UserDTO> getAllManagedUsers(Pageable pageable) {
-//        return userRepository.findAllByLoginNot(pageable, Constants.ANONYMOUS_USER).map(UserDTO::new);
-//    }
-
-    @Transactional(readOnly = true)
-    public Optional<UserEntity> getUserWithAuthoritiesByLogin(String login) {
-        return userRepository.findOneWithAuthoritiesByLogin(login);
-    }
-
-    @Transactional(readOnly = true)
-    public Optional<UserEntity> getUserWithAuthorities(Long id) {
-        return userRepository.findOneWithAuthoritiesById(id);
-    }
-
-    @Transactional(readOnly = true)
-    public Optional<UserEntity> getUserWithAuthorities() {
-        return SecurityUtils.getCurrentUserLogin().flatMap(userRepository::findOneWithAuthoritiesByLogin);
-    }
-
 
     @Scheduled(cron = "0 0 1 * * ?")
     public void removeNotActivatedUsers() {

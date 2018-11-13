@@ -27,7 +27,6 @@ import java.util.Objects;
 public class AuthenticationResource {
 
     private final TokenProvider tokenProvider;
-
     private final AuthenticationManager authenticationManager;
 
     public AuthenticationResource(TokenProvider tokenProvider, AuthenticationManager authenticationManager) {
